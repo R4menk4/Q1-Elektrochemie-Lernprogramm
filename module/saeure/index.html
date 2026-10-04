@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Interaktives Lern- und Übungsprogramm zur Säurekorrosion für den Chemie-Grundkurs der Jahrgangsstufe 12.">
+  <meta name="theme-color" content="#082f49">
+  <title>Säurekorrosion | Lernprogramm Chemie</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css?v=6">
+</head>
+<body>
+  <a class="skip-link" href="#lerninhalt">Zum Lerninhalt springen</a>
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">Fe</span>
+      <div>
+        <strong>Säurekorrosion</strong>
+        <span>Chemie GK Q1</span>
+      </div>
+    </div>
+    <div class="time-box" aria-label="Geplante Bearbeitungszeit">
+      <span>Dein Lerntempo</span>
+      <strong>Schritt für Schritt</strong>
+    </div>
+  </header>
+
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Lernweg">
+      <div class="progress-copy">
+        <span id="progressText">1 von 8</span>
+        <span id="progressPercent">0 % bearbeitet</span>
+      </div>
+      <div class="progress-track" aria-hidden="true"><div id="progressBar"></div></div>
+      <nav id="stepNav">
+        <button class="nav-step active" data-step="0"><span>1</span>Start</button>
+        <button class="nav-step" data-step="1"><span>2</span>Vorwissen</button>
+        <button class="nav-step" data-step="2"><span>3</span>Ausgangslage</button>
+        <button class="nav-step" data-step="3"><span>4</span>Teilreaktionen</button>
+        <button class="nav-step" data-step="4"><span>5</span>Lokalelement</button>
+        <button class="nav-step" data-step="5"><span>6</span>Vergleich</button>
+        <button class="nav-step" data-step="6"><span>7</span>Übungen</button>
+        <button class="nav-step" data-step="7"><span>8</span>Abschluss</button>
+      </nav>
+      <button class="text-button" id="resetButton">Fortschritt zurücksetzen</button>
+    </aside>
+
+    <main id="lerninhalt" tabindex="-1">
+      <section class="step active" data-step="0">
+        <div class="eyebrow">Lernweg · 1 Minute</div>
+        <h1>Warum löst sich Eisen in Säure auf?</h1>
+        <p class="lead">Du untersuchst die Säurekorrosion als elektrochemischen Vorgang. Am Ende kannst du die Teilreaktionen erklären und sie von der Sauerstoffkorrosion unterscheiden.</p>
+
+        <div class="goal-grid">
+          <article><span class="goal-number">01</span><h2>Teilreaktionen</h2><p>Oxidation und Reduktion richtig zuordnen.</p></article>
+          <article><span class="goal-number">02</span><h2>Lokalelement</h2><p>Elektronen- und Ionentransport erklären.</p></article>
+          <article><span class="goal-number">03</span><h2>Vergleich</h2><p>Säure- und Sauerstoffkorrosion sicher unterscheiden.</p></article>
+        </div>
+
+        <div class="note">
+          <strong>Arbeitsweise</strong>
+          <p>Beginne mit einer Aufgabe. Du darfst jederzeit einen Tipp öffnen, etwas ausprobieren und erneut prüfen. Hilfen kosten keine Punkte. Deine Eingaben werden in diesem Browser gespeichert, damit du nach einer Pause weitermachen kannst.</p>
+        </div>
+      </section>
+
+      <section class="step" data-step="1">
+        <div class="eyebrow">Vorwissen aktivieren · 3 Minuten</div>
+        <h1>Sauerstoffkorrosion im Rückblick</h1>
+        <p class="lead">Bei der Sauerstoffkorrosion entstehen auf der feuchten Eisenoberfläche anodische und kathodische Bereiche.</p>
+
+        <div class="reaction-board oxygen-board" aria-label="Schema der Sauerstoffkorrosion">
+          <div class="reaction-column anode">
+            <span class="label">Anode · Oxidation</span>
+            <div class="equation">Fe → Fe²⁺ + 2 e⁻</div>
+            <p>Eisenatome verlassen den Metallverband.</p>
+          </div>
+          <div class="electron-route"><span>Elektronenfluss im Metall</span></div>
+          <div class="reaction-column cathode">
+            <span class="label">Kathode · Reduktion</span>
+            <div class="equation">O₂ + 2 H₂O + 4 e⁻ → 4 OH⁻</div>
+            <p>Gelöster Sauerstoff nimmt Elektronen auf.</p>
+          </div>
+        </div>
+
+        <form class="check-card auto-question" data-correct="b">
+          <fieldset>
+            <legend>Welche Aussage beschreibt die Kathodenreaktion der Sauerstoffkorrosion?</legend>
+            <label><input type="radio" name="recall" value="a"> Eisen nimmt Elektronen auf und bildet Fe²⁺.</label>
+            <label><input type="radio" name="recall" value="b"> Sauerstoff nimmt Elektronen auf; dabei entstehen OH⁻-Ionen.</label>
+            <label><input type="radio" name="recall" value="c"> Oxonium-Ionen geben Elektronen ab; dabei entsteht Wasserstoff.</label>
+          </fieldset>
+          <button type="submit" class="check-button">Antwort prüfen</button>
+          <p class="feedback" role="status"></p>
+        </form>
+      </section>
+
+      <section class="step" data-step="2">
+        <div class="eyebrow">Ausgangslage · 4 Minuten</div>
+        <h1>Eisen trifft auf eine saure Lösung</h1>
+        <p class="lead">Wir betrachten Eisen in verdünnter Salzsäure. Metall und wässriger Elektrolyt stehen direkt miteinander in Kontakt. Die folgende Erklärung gilt für dieses Modellbeispiel.</p>
+
+        <figure class="learning-figure">
+          <a href="assets/ausgangssituation.png" class="zoomable-image" aria-label="Grafik zur Ausgangssituation vergrößern">
+            <img src="assets/ausgangssituation.png" alt="Eisen in einer sauren Lösung mit frei beweglichen Oxonium-Ionen" loading="lazy">
+            <span class="zoom-hint">Grafik vergrößern</span>
+          </a>
+          <figcaption>Vereinfachtes Modell: Eisen steht mit einer sauren, wässrigen Lösung in Kontakt. Die Bildaussage zu H₃O⁺ bezieht sich auf diese Lösung. Wassermoleküle und Gegenionen (hier Cl⁻) sind nicht eingezeichnet; die Lösung ist insgesamt elektrisch neutral.</figcaption>
+        </figure>
+
+        <div class="concept-stack">
+          <article>
+            <div class="concept-icon metal" aria-hidden="true">Fe</div>
+            <div><h2>Metall</h2><p>Eisen kann Elektronen abgeben. Es wirkt als Reduktionsmittel.</p></div>
+          </article>
+          <article>
+            <div class="concept-icon acid" aria-hidden="true">H₃O⁺</div>
+            <div><h2>Saure Lösung</h2><p>Oxonium-Ionen können Elektronen aufnehmen.</p></div>
+          </article>
+          <article>
+            <div class="concept-icon ion" aria-hidden="true">±</div>
+            <div><h2>Elektrolyt</h2><p>Bewegliche Ionen ermöglichen den Ladungstransport in der Lösung.</p></div>
+          </article>
+        </div>
+
+        <form class="check-card auto-question" data-correct="b">
+          <fieldset>
+            <legend>Welche Aufgabe übernimmt die wässrige Lösung bei der hier betrachteten Säurekorrosion?</legend>
+            <label><input type="radio" name="dry-acid" value="a"> Nur Wasser kann Elektronen abgeben.</label>
+            <label><input type="radio" name="dry-acid" value="b"> Bewegliche Ionen transportieren elektrische Ladung in der Lösung.</label>
+            <label><input type="radio" name="dry-acid" value="c"> Trockenes Eisen besitzt keine Elektronen.</label>
+          </fieldset>
+          <button type="submit" class="check-button">Antwort prüfen</button>
+          <p class="feedback" role="status"></p>
+        </form>
+      </section>
+
+      <section class="step" data-step="3">
+        <div class="eyebrow">Teilreaktionen · 12 Minuten</div>
+        <h1>Elektronenabgabe und Elektronenaufnahme</h1>
+        <p class="lead">Beginne nur mit der Anode: Bild ansehen, Produkte auswählen, Gleichung bauen. Danach gehst du zur Kathode weiter. Die Tipps begleiten dich.</p>
+
+        <div class="graphic-grid">
+          <article class="investigation-panel">
+            <figure class="learning-figure">
+              <a href="assets/oxidation-eisen.png" class="zoomable-image cropped-reaction" data-crop="reaction" aria-label="Darstellung des anodischen Bereichs vergrößern">
+                <img src="assets/oxidation-eisen.png" alt="Anodischer Bereich auf einer Eisenoberfläche: Eisenatome verlassen den Metallverband" loading="lazy">
+                <span class="zoom-hint">Grafik vergrößern</span>
+              </a>
+              <figcaption><strong>Arbeitsauftrag A:</strong> Deute die Vorgänge am anodischen Bereich.</figcaption>
+            </figure>
+
+            <form class="check-card auto-question compact-question" data-correct="b">
+              <fieldset>
+                <legend>Welche Teilchen entstehen an der Anode?</legend>
+                <label><input type="radio" name="anode-products" value="a"> Fe-Atome und H₂-Moleküle</label>
+                <label><input type="radio" name="anode-products" value="b"> Fe²⁺-Ionen und Elektronen</label>
+                <label><input type="radio" name="anode-products" value="c"> H₃O⁺-Ionen und OH⁻-Ionen</label>
+              </fieldset>
+              <button type="submit" class="check-button">Antwort prüfen</button>
+              <p class="feedback" role="status"></p>
+            </form>
+
+            <div class="dnd-activity equation-activity" data-mode="sequence" data-key="anode-equation" data-answer="fe|arrow|fe2|plus|2e">
+              <h2>Baue die Teilgleichung der Anode</h2>
+              <p class="activity-instruction">Ziehe die Bausteine in das Gleichungsfeld. Auf dem Smartphone: Baustein antippen, dann das Zielfeld.</p>
+              <div class="card-bank drop-zone" data-zone="bank" aria-label="Bausteine der Anodengleichung">
+                <button type="button" class="drag-card equation-token" draggable="true" data-card="a-fe2" data-value="fe2" data-order="1">Fe²⁺</button>
+                <button type="button" class="drag-card equation-token" draggable="true" data-card="a-plus" data-value="plus" data-order="2">+</button>
+                <button type="button" class="drag-card equation-token" draggable="true" data-card="a-fe" data-value="fe" data-order="3">Fe</button>
+                <button type="button" class="drag-card equation-token" draggable="true" data-card="a-2e" data-value="2e" data-order="4">2 e⁻</button>
+                <button type="button" class="drag-card equation-token" draggable="true" data-card="a-arrow" data-value="arrow" data-order="5">→</button>
+              </div>
+              <div class="equation-drop drop-zone" data-zone="answer" aria-label="Gleichungsfeld der Anode"><span class="drop-placeholder">Teilgleichung hier zusammensetzen</span><button type="button" class="drop-tail">Hier ablegen</button></div>
+              <div class="activity-actions"><button type="button" class="check-button dnd-check">Gleichung prüfen</button><button type="button" class="secondary-button dnd-reset">Neu ordnen</button></div>
+              <p class="feedback" role="status"></p>
+            </div>
+          </article>
+
+          <article class="investigation-panel">
+            <figure class="learning-figure">
+              <a href="assets/reduktion-oxonium.png" class="zoomable-image cropped-reaction cathode-crop" data-crop="cathode" aria-label="Darstellung des kathodischen Bereichs vergrößern">
+                <img src="assets/reduktion-oxonium.png" alt="Kathodischer Bereich auf einer Eisenoberfläche: Oxonium-Ionen reagieren und Gasbläschen entstehen" loading="lazy">
+                <span class="zoom-hint">Grafik vergrößern</span>
+              </a>
+              <figcaption><strong>Arbeitsauftrag B:</strong> Deute die Vorgänge am kathodischen Bereich.</figcaption>
+            </figure>
+
+            <form class="check-card auto-question compact-question" data-correct="c">
+              <fieldset>
+                <legend>Welche Stoffe entstehen an der Kathode?</legend>
+                <label><input type="radio" name="cathode-products" value="a"> Fe²⁺ und O₂</label>
+                <label><input type="radio" name="cathode-products" value="b"> OH⁻ und Fe</label>
+                <label><input type="radio" name="cathode-products" value="c"> H₂ und H₂O</label>
+              </fieldset>
+              <button type="submit" class="check-button">Antwort prüfen</button>
+              <p class="feedback" role="status"></p>
+            </form>
+
+            <div class="dnd-activity equation-activity" data-mode="sequence" data-key="cathode-equation" data-answer="2h3o|plus1|2e|arrow|h2|plus2|2h2o">
+              <h2>Baue die Teilgleichung der Kathode</h2>
+              <p class="activity-instruction">Achte auf den Ladungs- und Stoffausgleich.</p>
+              <div class="card-bank drop-zone" data-zone="bank" aria-label="Bausteine der Kathodengleichung">
+                <button type="button" class="drag-card equation-token" draggable="true" data-card="k-h2" data-value="h2" data-order="1">H₂</button>
+                <button type="button" class="drag-card equation-token" draggable="true" data-card="k-plus1" data-value="plus1" data-order="2">+</button>
+                <button type="button" class="drag-card equation-token" draggable="true" data-card="k-2h3o" data-value="2h3o" data-order="3">2 H₃O⁺</button>
+                <button type="button" class="drag-card equation-token" draggable="true" data-card="k-2h2o" data-value="2h2o" data-order="4">2 H₂O</button>
+                <button type="button" class="drag-card equation-token" draggable="true" data-card="k-arrow" data-value="arrow" data-order="5">→</button>
+                <button type="button" class="drag-card equation-token" draggable="true" data-card="k-2e" data-value="2e" data-order="6">2 e⁻</button>
+                <button type="button" class="drag-card equation-token" draggable="true" data-card="k-plus2" data-value="plus2" data-order="7">+</button>
+              </div>
+              <div class="equation-drop drop-zone" data-zone="answer" aria-label="Gleichungsfeld der Kathode"><span class="drop-placeholder">Teilgleichung hier zusammensetzen</span><button type="button" class="drop-tail">Hier ablegen</button></div>
+              <div class="activity-actions"><button type="button" class="check-button dnd-check">Gleichung prüfen</button><button type="button" class="secondary-button dnd-reset">Neu ordnen</button></div>
+              <p class="feedback" role="status"></p>
+            </div>
+          </article>
+        </div>
+
+        <div class="dnd-activity sequence-activity" data-mode="sequence" data-key="corrosion-sequence" data-answer="contact|oxidation|ions|electron-flow|reduction|hydrogen" data-reveal="acid-summary">
+          <span class="task-number">Ablauf ordnen</span>
+          <h2>Ordne die Schritte zu einer Erklärungskette</h2>
+          <p class="activity-instruction">Beginne mit dem Kontakt zwischen Eisen und saurer Lösung. Die Reihenfolge hilft beim Erklären: Oxidation und Reduktion laufen tatsächlich gekoppelt ab.</p>
+          <div class="card-bank drop-zone vertical-bank" data-zone="bank" aria-label="Ungeordnete Schritte der Säurekorrosion">
+            <button type="button" class="drag-card sequence-card" draggable="true" data-card="s-hydrogen" data-value="hydrogen" data-order="1">Wasserstoffgas entsteht.</button>
+            <button type="button" class="drag-card sequence-card" draggable="true" data-card="s-electron" data-value="electron-flow" data-order="2">Elektronen fließen im Metall zum kathodischen Bereich.</button>
+            <button type="button" class="drag-card sequence-card" draggable="true" data-card="s-contact" data-value="contact" data-order="3">Saure Lösung benetzt die Eisenoberfläche.</button>
+            <button type="button" class="drag-card sequence-card" draggable="true" data-card="s-reduction" data-value="reduction" data-order="4">H₃O⁺-Ionen nehmen Elektronen auf.</button>
+            <button type="button" class="drag-card sequence-card" draggable="true" data-card="s-ions" data-value="ions" data-order="5">Fe²⁺-Ionen gehen in die Lösung über.</button>
+            <button type="button" class="drag-card sequence-card" draggable="true" data-card="s-oxidation" data-value="oxidation" data-order="6">Eisenatome geben an anodischen Stellen Elektronen ab.</button>
+          </div>
+          <div class="sequence-drop drop-zone" data-zone="answer" aria-label="Geordneter Ablauf der Säurekorrosion"><span class="drop-placeholder">Schritte hier in der richtigen Reihenfolge ablegen</span><button type="button" class="drop-tail">Ausgewählten Schritt hier ablegen</button></div>
+          <div class="activity-actions"><button type="button" class="check-button dnd-check">Reihenfolge prüfen</button><button type="button" class="secondary-button dnd-reset">Neu ordnen</button></div>
+          <p class="feedback" role="status"></p>
+        </div>
+
+        <div class="sum-box" id="acid-summary" hidden>
+          <span>Ergebnis</span>
+          <strong>Fe + 2 H₃O⁺ → Fe²⁺ + H₂ + 2 H₂O</strong>
+        </div>
+      </section>
+
+      <section class="step" data-step="4">
+        <div class="eyebrow">Lokalelement · 4 Minuten</div>
+        <h1>Zwei Reaktionsorte auf einer Oberfläche</h1>
+        <p class="lead">Wähle zunächst eine Definition. Nutze danach die Gesamtgrafik, um Elektronen- und Ionentransport zu erklären.</p>
+
+        <form class="check-card auto-question" data-correct="c" data-reveal="local-element-explanation">
+          <fieldset>
+            <legend>Was bezeichnet man in diesem Zusammenhang als Lokalelement?</legend>
+            <label><input type="radio" name="local-element" value="a"> Ein einzelnes Eisenatom, das gleichzeitig oxidiert und reduziert wird.</label>
+            <label><input type="radio" name="local-element" value="b"> Eine zweite Metallelektrode, die von außen an das Eisen angeschlossen wird.</label>
+            <label><input type="radio" name="local-element" value="c"> Benachbarte anodische und kathodische Bereiche auf derselben Metalloberfläche, die elektrochemisch zusammenwirken.</label>
+          </fieldset>
+          <button type="submit" class="check-button">Antwort prüfen</button>
+          <p class="feedback" role="status"></p>
+        </form>
+
+        <div id="local-element-explanation" hidden>
+          <figure class="learning-figure process-figure">
+            <a href="assets/gesamtprozess.png" class="zoomable-image" aria-label="Grafik zum Gesamtprozess der Säurekorrosion vergrößern">
+              <img src="assets/gesamtprozess.png" alt="Gesamtprozess der Säurekorrosion mit anodischem und kathodischem Bereich, Elektronenfluss im Eisen und Gesamtreaktion" loading="lazy">
+              <span class="zoom-hint">Grafik vergrößern</span>
+            </a>
+            <figcaption>Prüfe an der Grafik: Wo bewegen sich Elektronen, wo bewegen sich Ionen?</figcaption>
+          </figure>
+
+          <div class="explain-grid">
+            <article><h2>Im Metall</h2><p>Elektronen fließen vom anodischen zum kathodischen Bereich.</p></article>
+            <article><h2>In der Lösung</h2><p>Bewegliche Ionen sorgen für den Ladungsausgleich.</p></article>
+          </div>
+
+          <div class="warning-note">
+            <strong>Wichtig:</strong> Bei der Säurekorrosion entstehen unmittelbar Fe²⁺-Ionen, Wasserstoff und Wasser. Rost entsteht nicht direkt. Erst Folgereaktionen mit Sauerstoff und bei geeignetem pH-Wert können Rostprodukte bilden.
+          </div>
+        </div>
+      </section>
+
+      <section class="step" data-step="5">
+        <div class="eyebrow">Vergleich · 6 Minuten</div>
+        <h1>Gleiche Oxidation, andere Reduktion</h1>
+        <p class="lead">In beiden Fällen gibt Eisen Elektronen ab. Der Elektronenakzeptor an der Kathode entscheidet über die Produkte.</p>
+
+        <div class="dnd-activity comparison-activity" data-mode="mapping" data-key="corrosion-comparison">
+          <h2>Vervollständige die Vergleichstabelle</h2>
+          <p class="activity-instruction">Ordne jede Karte dem passenden Feld zu. Jede Karte wird genau einmal verwendet.</p>
+          <div class="card-bank drop-zone comparison-bank" data-zone="bank" aria-label="Ungeordnete Vergleichskarten">
+            <button type="button" class="drag-card compare-card" draggable="true" data-card="c-oh" data-target="oxygen-product" data-order="1">OH⁻-Ionen</button>
+            <button type="button" class="drag-card compare-card" draggable="true" data-card="c-acid-cond" data-target="acid-condition" data-order="2">saure, wässrige Lösung</button>
+            <button type="button" class="drag-card compare-card" draggable="true" data-card="c-o2" data-target="oxygen-acceptor" data-order="3">O₂</button>
+            <button type="button" class="drag-card compare-card" draggable="true" data-card="c-acid-observation" data-target="acid-observation" data-order="4">Gasbläschen; Eisen löst sich</button>
+            <button type="button" class="drag-card compare-card" draggable="true" data-card="c-h3o" data-target="acid-acceptor" data-order="5">H₃O⁺</button>
+            <button type="button" class="drag-card compare-card" draggable="true" data-card="c-oxygen-cond" data-target="oxygen-condition" data-order="6">Wasserfilm und O₂</button>
+            <button type="button" class="drag-card compare-card" draggable="true" data-card="c-h2" data-target="acid-product" data-order="7">H₂ und H₂O</button>
+            <button type="button" class="drag-card compare-card" draggable="true" data-card="c-rust" data-target="oxygen-observation" data-order="8">Rostprodukte nach Folgereaktionen</button>
+          </div>
+
+          <div class="comparison comparison-drop-table" role="table" aria-label="Vergleich von Säure- und Sauerstoffkorrosion zum Ausfüllen">
+            <div class="comparison-row header" role="row"><div role="columnheader">Merkmal</div><div role="columnheader">Säurekorrosion</div><div role="columnheader">Sauerstoffkorrosion</div></div>
+            <div class="comparison-row" role="row"><div role="rowheader">Bedingungen</div><div class="drop-zone table-drop" data-zone="acid-condition"></div><div class="drop-zone table-drop" data-zone="oxygen-condition"></div></div>
+            <div class="comparison-row fixed-row" role="row"><div role="rowheader">Anode</div><div>Fe → Fe²⁺ + 2 e⁻</div><div>Fe → Fe²⁺ + 2 e⁻</div></div>
+            <div class="comparison-row" role="row"><div role="rowheader">Elektronenakzeptor</div><div class="drop-zone table-drop" data-zone="acid-acceptor"></div><div class="drop-zone table-drop" data-zone="oxygen-acceptor"></div></div>
+            <div class="comparison-row" role="row"><div role="rowheader">Kathodenprodukt</div><div class="drop-zone table-drop" data-zone="acid-product"></div><div class="drop-zone table-drop" data-zone="oxygen-product"></div></div>
+            <div class="comparison-row" role="row"><div role="rowheader">Beobachtung/Folge</div><div class="drop-zone table-drop" data-zone="acid-observation"></div><div class="drop-zone table-drop" data-zone="oxygen-observation"></div></div>
+          </div>
+          <div class="activity-actions"><button type="button" class="check-button dnd-check">Tabelle prüfen</button><button type="button" class="secondary-button dnd-reset">Neu zuordnen</button></div>
+          <p class="feedback" role="status"></p>
+        </div>
+
+        <form class="check-card auto-question" data-correct="a">
+          <fieldset>
+            <legend>Was ist bei beiden Korrosionsarten gleich?</legend>
+            <label><input type="radio" name="compare" value="a"> Eisen wird oxidiert und gibt Elektronen ab.</label>
+            <label><input type="radio" name="compare" value="b"> Oxonium-Ionen werden reduziert.</label>
+            <label><input type="radio" name="compare" value="c"> An der Kathode entsteht Wasserstoff.</label>
+          </fieldset>
+          <button type="submit" class="check-button">Antwort prüfen</button>
+          <p class="feedback" role="status"></p>
+        </form>
+      </section>
+
+      <section class="step" data-step="6">
+        <div class="eyebrow">Übungsphase · 13 Minuten</div>
+        <h1>Wissen anwenden</h1>
+        <p class="lead">Du siehst immer nur eine Aufgabe. Probiere eine Antwort aus und nutze die Rückmeldung. Für eigene Erklärungen findest du Satzanfänge. Die letzte Aufgabe ist eine freiwillige Vertiefung.</p>
+
+        <form class="exercise-block auto-question" data-correct="b">
+          <span class="task-number">Aufgabe 1</span>
+          <fieldset>
+            <legend>In verdünnter Salzsäure bilden sich an einem Eisenstück Gasbläschen. Welche Deutung passt?</legend>
+            <label><input type="radio" name="gas" value="a"> Fe²⁺-Ionen reagieren zu gasförmigem Eisen.</label>
+            <label><input type="radio" name="gas" value="b"> H₃O⁺-Ionen nehmen Elektronen auf; H₂ entsteht.</label>
+            <label><input type="radio" name="gas" value="c"> Sauerstoff gibt Elektronen ab; O₂ entsteht.</label>
+          </fieldset>
+          <button type="submit" class="check-button">Antwort prüfen</button>
+          <p class="feedback" role="status"></p>
+        </form>
+
+        <form class="exercise-block auto-question" data-correct="c">
+          <span class="task-number">Aufgabe 2</span>
+          <fieldset>
+            <legend>Welche Aussage zum Elektronen- und Ladungstransport ist richtig?</legend>
+            <label><input type="radio" name="transport" value="a"> Elektronen fließen durch die Lösung von der Kathode zur Anode.</label>
+            <label><input type="radio" name="transport" value="b"> Ionen fließen ausschließlich im Metall.</label>
+            <label><input type="radio" name="transport" value="c"> Elektronen fließen im Metall; Ionen bewegen sich im Elektrolyten.</label>
+          </fieldset>
+          <button type="submit" class="check-button">Antwort prüfen</button>
+          <p class="feedback" role="status"></p>
+        </form>
+
+        <form class="exercise-block select-question">
+          <span class="task-number">Aufgabe 3</span>
+          <h2>Ordne die Aussagen zu</h2>
+          <div class="select-row"><label for="s1">H₃O⁺ nimmt Elektronen auf.</label><select id="s1" data-answer="acid"><option value="">Bitte wählen</option><option value="acid">Säurekorrosion</option><option value="oxygen">Sauerstoffkorrosion</option><option value="both">beide</option></select></div>
+          <div class="select-row"><label for="s2">Eisen wird zu Fe²⁺ oxidiert.</label><select id="s2" data-answer="both"><option value="">Bitte wählen</option><option value="acid">Säurekorrosion</option><option value="oxygen">Sauerstoffkorrosion</option><option value="both">beide</option></select></div>
+          <div class="select-row"><label for="s3">An der Kathode entstehen OH⁻-Ionen.</label><select id="s3" data-answer="oxygen"><option value="">Bitte wählen</option><option value="acid">Säurekorrosion</option><option value="oxygen">Sauerstoffkorrosion</option><option value="both">beide</option></select></div>
+          <button type="submit" class="check-button">Zuordnung prüfen</button>
+          <p class="feedback" role="status"></p>
+        </form>
+
+        <div class="exercise-block open-question">
+          <span class="task-number">Aufgabe 4 · offen</span>
+          <label for="open1"><strong>Ein Schüler behauptet: „Die braune Schicht zeigt, dass bei der Säurekorrosion sofort Rost entsteht.“ Beurteile die Aussage fachlich.</strong></label>
+          <textarea id="open1" rows="5" placeholder="Formuliere deine Beurteilung in 3–4 Sätzen."></textarea>
+          <button type="button" class="secondary-button reveal-button" data-target="solution1">Musterlösung anzeigen</button>
+          <div id="solution1" class="model-answer" hidden>
+            <strong>Mögliche Lösung</strong>
+            <p>Die Aussage ist zu ungenau. Unmittelbar entstehen bei der Säurekorrosion Fe²⁺-Ionen, H₂ und H₂O. Rostprodukte können erst durch weitere Reaktionen entstehen, wenn Sauerstoff vorhanden ist und der pH-Wert geeignet ist. Eine braune Schicht kann daher eine Folge späterer Reaktionen sein.</p>
+          </div>
+        </div>
+
+        <div class="exercise-block open-question">
+          <span class="task-number">Aufgabe 5 · freiwillige Vertiefung</span>
+          <label for="open2"><strong>Erkläre, warum ein Lacküberzug sowohl Säure- als auch Sauerstoffkorrosion bremsen kann.</strong></label>
+          <textarea id="open2" rows="4" placeholder="Nutze die Begriffe Eisenoberfläche, Elektrolyt und Stoffkontakt."></textarea>
+          <button type="button" class="secondary-button reveal-button" data-target="solution2">Denkhilfe anzeigen</button>
+          <div id="solution2" class="model-answer" hidden>
+            <strong>Denkhilfe</strong>
+            <p>Überlege, welche Stoffe bei beiden Korrosionsarten die Eisenoberfläche erreichen müssen und welche Rolle die wässrige Lösung als Elektrolyt spielt.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="step" data-step="7">
+        <div class="eyebrow">Abschluss · 2 Minuten</div>
+        <h1>Dein Ergebnis</h1>
+        <p class="lead">Nutze diese Übersicht, um dich auf die gemeinsame Besprechung vorzubereiten.</p>
+
+        <div class="result-panel">
+          <div class="score-ring" aria-hidden="true"><span id="scoreValue">0/13</span></div>
+          <div>
+            <h2>Das hast du geschafft</h2>
+            <p id="scoreText">Noch keine Aufgabe geprüft.</p>
+          </div>
+        </div>
+
+        <figure class="learning-figure hero-figure">
+          <a href="assets/saeurekorrosion-ueberblick.png" class="zoomable-image" aria-label="Übersichtsgrafik zur Säurekorrosion vergrößern">
+            <img src="assets/saeurekorrosion-ueberblick.png" alt="Säurekorrosion von Eisen als Lokalelement mit Anode, Kathode, Elektronenfluss und Gesamtreaktion" loading="lazy">
+            <span class="zoom-hint">Grafik vergrößern</span>
+          </a>
+          <figcaption>Nutze die Übersicht zur abschließenden Kontrolle deiner Ergebnisse.</figcaption>
+        </figure>
+
+        <div class="takeaway-grid">
+          <article><span>Oxidation</span><strong>Fe → Fe²⁺ + 2 e⁻</strong></article>
+          <article><span>Reduktion</span><strong>2 H₃O⁺ + 2 e⁻ → H₂ + 2 H₂O</strong></article>
+          <article><span>Unterschied</span><strong>H₃O⁺ statt O₂ nimmt Elektronen auf.</strong></article>
+        </div>
+
+        <div class="discussion-list">
+          <h2>Für die Kursbesprechung</h2>
+          <ul>
+            <li>Warum können Anode und Kathode auf demselben Eisenstück liegen?</li>
+            <li>Warum entsteht bei der Säurekorrosion Wasserstoff, bei der Sauerstoffkorrosion aber OH⁻?</li>
+            <li>Welche Bedingungen fördern spätere Rostbildung?</li>
+          </ul>
+        </div>
+      </section>
+
+      <div class="step-controls">
+        <button id="prevButton" class="secondary-button" disabled>Zurück</button>
+        <button id="nextButton" class="primary-button">Weiter</button>
+      </div>
+    </main>
+  </div>
+
+  <dialog id="imageDialog" class="image-dialog" aria-labelledby="imageDialogTitle">
+    <div class="dialog-header">
+      <strong id="imageDialogTitle">Grafik vergrößert</strong>
+      <button type="button" id="closeImageDialog" class="dialog-close">Zurück zum Lernprogramm</button>
+    </div>
+    <div id="dialogImageFrame" class="dialog-image-frame">
+      <img id="dialogImage" alt="">
+    </div>
+  </dialog>
+
+  <div id="liveRegion" class="sr-only" aria-live="polite"></div>
+  <script src="script.js?v=11"></script>
+  <script src="guide.js?v=11"></script>
+<script src="../bridge.js?v=11"></script></body>
+</html>
