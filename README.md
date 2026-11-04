@@ -6,7 +6,13 @@ Gemeinsames Lernprogramm für den Chemie-Grundkurs Q1. `index.html` öffnet die 
 
 Elf Kacheln: Mein Selbstcheck, Klausurähnliche Aufgaben, Redoxreaktionen, Elektrodenpotenziale, Daniell-Element, Lithium-Ionen-Akku, Säurekorrosion, Sauerstoffkorrosion, Korrosion und Korrosionsschutz, Wasserstoff und Brennstoffzelle sowie Solar-Wasserstoff-Labor.
 
-Der Selbstcheck enthält 57 Kompetenz-Aussagen mit direkten Übungslinks. Die 13 klausurähnlichen Aufgaben sind in fünf Themenbereiche gegliedert.
+Der Selbstcheck enthält 78 Hauptaussagen und zwei freiwillige Vertiefungen mit direkten Übungslinks. Die 13 klausurähnlichen Aufgaben sind in fünf Themenbereiche gegliedert.
+
+## Selbstcheck: aktualisierte Fassung
+
+Die Themenauswahl unterscheidet alle 78 Hauptaussagen, 52 Aussagen zur aktuellen Klausur (Wasserstoff und Korrosion einschließlich Redoxgrundlagen und Methoden) und zwei freiwillige Vertiefungen. Der Lernstandsfilter lässt sich mit jeder Themenauswahl kombinieren. Fortschrittszahlen beziehen sich auf die gewählte Themenauswahl; Zusatzthemen zählen nicht zu den Hauptinhalten. Alle sechs neuen Klausuraufgaben sind verlinkt.
+
+Ergänzt wurden Gasnachweise, Gesamtgleichungen, Katalyse, Energieverluste, Klimawirkung, Korrosion ohne Rost, Ladungswege, Bedingungen und Wartung von Opferanoden sowie Versuchsplanung und Daten-/Kostenbewertung. Dopplungen zum Lithium-Ionen-Akku wurden zusammengeführt. Unveränderte Aussagen behalten ihre IDs und Einschätzungen. Neue und aufgeteilte Kompetenzen beginnen offen; frühere, nicht mehr angezeigte Einträge bleiben im Speicher. Für den gleichwertigen Separator-Eintrag wird eine vorhandene ältere Einschätzung nur übernommen, wenn noch keine Einschätzung unter der erhaltenen ID existiert.
 
 ## Klausurvorbereitung vom 04.11.2026
 
