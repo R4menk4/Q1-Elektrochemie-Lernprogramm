@@ -6,7 +6,13 @@ Gemeinsames Lernprogramm für den Chemie-Grundkurs Q1. `index.html` öffnet die 
 
 Elf Kacheln: Mein Selbstcheck, Klausurähnliche Aufgaben, Redoxreaktionen, Elektrodenpotenziale, Daniell-Element, Lithium-Ionen-Akku, Säurekorrosion, Sauerstoffkorrosion, Korrosion und Korrosionsschutz, Wasserstoff und Brennstoffzelle sowie Solar-Wasserstoff-Labor.
 
-Der Selbstcheck enthält 57 Kompetenz-Aussagen mit direkten Übungslinks. Die sieben klausurähnlichen Aufgaben sind in vier Themenbereiche gegliedert.
+Der Selbstcheck enthält 57 Kompetenz-Aussagen mit direkten Übungslinks. Die elf klausurähnlichen Aufgaben sind in fünf Themenbereiche gegliedert.
+
+## Klausurvorbereitung vom 04.11.2026
+
+Die erste Kachel innerhalb der klausurähnlichen Aufgaben heißt „Vorbereitung auf die anstehende Klausur“. Sie enthält ausschließlich Hofmann-Apparat, PEM-Brennstoffzelle, Säure- und Sauerstoffkorrosion sowie Korrosionsschutz. Vier neue Aufgabenblöcke mit jeweils fünf Teilaufgaben und 25 BE ergänzen die sieben bisherigen Aufgaben. Ein Block zu Wasserstoff und ein Block zu Korrosion können als Übungszusammenstellung mit 50 BE bearbeitet werden; es wird keine verbindliche Klausurdauer vorgegeben.
+
+Materialien, didaktisch modellierte Daten, Vorgehenshinweise und einzeln aufklappbare Musterlösungen mit Teilpunkten unterstützen die selbstständige Vorbereitung. Offene Antworten werden lokal gespeichert und anhand der Musterlösungen selbst eingeschätzt, nicht automatisch benotet. Direktlinks: `#klausur?task=fokus-hofmann`, `#klausur?task=fokus-pem`, `#klausur?task=fokus-korrosion` und `#klausur?task=fokus-korrosionsschutz`.
 
 Stand der Abschlussprüfung: 04.10.2026, Revision 11. Gleichungsprüfungen erlauben freie Stoffreihenfolge innerhalb jeder Seite und proportionale Koeffizienten. Edukt- und Produktseite sowie Ladungen müssen zur gestellten Aufgabe passen. Tipps unterstützen das Vorgehen; vollständige Lösungen werden ausdrücklich als Musterlösung geöffnet. Freitext-Rückmeldungen auf Basis von Schlüsselwörtern ersetzen keine fachliche Bewertung.
 

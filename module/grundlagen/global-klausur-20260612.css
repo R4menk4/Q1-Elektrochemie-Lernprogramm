@@ -1456,3 +1456,6 @@ button:disabled {
     border-color: #999999;
   }
 }
+
+/* Tabellen bleiben innerhalb der neuen Klausurmaterialien scrollbar. */
+.material-stack--exam > .material-block { min-width: 0; }

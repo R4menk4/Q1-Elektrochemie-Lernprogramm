@@ -497,6 +497,7 @@
   }
 
   const taskGroups=[
+    {id:'klausur-fokus',title:'Vorbereitung auf die anstehende Klausur',description:'Nur Hofmann-Apparat, Brennstoffzelle, Korrosion und Korrosionsschutz · 4 Aufgaben mit je 25 BE',image:'../../assets/klausur.png',ids:['fokus-hofmann','fokus-pem','fokus-korrosion','fokus-korrosionsschutz']},
     {id:'redox',title:'Redoxreaktionen und Redoxreihe',image:'../../assets/redox.png',ids:['kupferdach-patina','eisen-zink-kupfersulfat']},
     {id:'zellen',title:'Galvanische Zellen und Zellspannung',image:'../../assets/potenziale.png',ids:['groesste-zellspannung','galvanische-zelle-oder-elektrolyse']},
     {id:'elektrolyse',title:'Elektrolyse und Rohstoffe',image:'../../assets/solarlabor.png',ids:['aluminium-elektrolyse']},
@@ -508,7 +509,7 @@
     const cards=group?klausurTasks.filter(t=>group.ids.includes(t.id)):taskGroups;
     return `${pageHeader(group?group.title:'Klausurähnliche Aufgaben',group?'Wähle eine Aufgabe. Deine Antworten bleiben gespeichert.':'Wähle zuerst einen Themenbereich. Eine Aufgabe reicht für den Anfang.')}
     ${group?'<button class="back-button" data-task-group="">← Alle Themenbereiche</button>':''}
-    <div class="klausur-grid">${cards.map(t=>`<article class="klausur-card"><img class="klausur-card__image" src="${group?esc(assetSrc(t.image)):t.image}" alt=""><div class="klausur-card__body"><h2>${esc(t.shortTitle||t.title)}</h2><p>${group?esc(t.description):t.ids.length+' Aufgaben'}</p><button class="primary-button" ${group?'data-klausur-task':'data-task-group'}="${t.id}">${group?'Aufgabe öffnen':'Themenbereich öffnen'}</button></div></article>`).join('')}</div>`;
+    <div class="klausur-grid">${cards.map(t=>`<article class="klausur-card"><img class="klausur-card__image" src="${group?esc(assetSrc(t.image)):t.image}" alt=""><div class="klausur-card__body"><h2>${esc(t.shortTitle||t.title)}</h2><p>${esc(t.description || t.ids.length+' Aufgaben')}</p><button class="primary-button" ${group?'data-klausur-task':'data-task-group'}="${t.id}">${group?'Aufgabe öffnen':'Themenbereich öffnen'}</button></div></article>`).join('')}</div>`;
   }
 
   function renderMaterial(material) {
@@ -806,8 +807,10 @@
     }
 
     return `<article class="subtask-card">
-      <h3>${esc(subtask.label)} ${esc(subtask.prompt)}</h3>
+      <h3>${esc(subtask.label)} ${subtask.operator ? `<strong>${esc(subtask.operator)}</strong> ` : ''}${esc(subtask.prompt)}</h3>
       ${control}
+      ${subtask.hint ? `<details class="print-hidden"><summary>Vorgehenshinweis</summary><p>${esc(subtask.hint)}</p></details>` : ''}
+      ${subtask.checking?.type === 'selfAssessment' ? '<p class="criteria-note">Vergleichen Sie nach dem Bearbeiten Ihre Antwort mit der Musterlösung und den Teilpunkten. Es erfolgt keine automatische Bewertung.</p>' : ''}
       ${isDirect ? `<button type="button" class="check-answer-button" data-check-direct="${task.id}:${subtask.id}">Antwort prüfen</button>` : ''}
       ${result ? `<p class="${result === 'Richtig.' ? 'direct-feedback direct-feedback--correct' : 'direct-feedback direct-feedback--wrong'}">${result}</p>` : ''}
       ${subtask.checking?.type === 'criteria' && subtask.criteria && subtask.criteria.length ? `<button type="button" class="check-answer-button" data-check-criteria="${task.id}:${subtask.id}">Antwort überprüfen</button><div data-criteria-for="${task.id}:${subtask.id}" data-criteria-visible="false"></div>` : ''}
@@ -827,8 +830,9 @@
       </div>
       ${pageHeader(task.title, task.context)}
       <div class="klausur-image-row">${imageHtml(task.image)}${imageHtml(task.secondaryImage)}</div>
-      <div class="material-stack">${(task.materials || []).map(renderMaterial).join('')}</div>
+      ${task.focusExam ? '<p class="criteria-note">Übungsvorschlag: Bearbeiten Sie zunächst ohne Hilfen einen Block zu Wasserstoff und einen zu Korrosion (zusammen 50 BE). Die übrigen Blöcke dienen der weiteren Übung. Materialien stehen unter den Aufgaben.</p>' : `<div class="material-stack">${(task.materials || []).map(renderMaterial).join('')}</div>`}
       <section class="subtask-stack">${(task.subtasks || []).map((subtask) => renderSubtask(task, subtask)).join('')}</section>
+      ${task.focusExam ? `<div class="material-stack material-stack--exam">${(task.materials || []).map(renderMaterial).join('')}</div><section class="material-block"><h2>Operatoren kurz erklärt</h2><p>Beschreiben: Befunde geordnet wiedergeben. Zuordnen: Begriffe passend zuweisen. Formulieren: fachlich korrekte Aussagen oder ausgeglichene Gleichungen angeben. Erklären: Ursachen und Zusammenhänge darstellen. Erläutern: Zusammenhänge mit Materialbezug verdeutlichen. Vergleichen: Gemeinsamkeiten und Unterschiede anhand gleicher Kriterien herausarbeiten. Berechnen: Ansatz und Rechenweg mit Ergebnis angeben. Beurteilen: ein fachlich begründetes Urteil formulieren. Empfehlen: eine kriteriengestützte Auswahl begründen.</p></section>` : ''}
       <div class="button-row print-hidden">
         <button type="button" class="primary-button" data-print-klausur="true">${esc(klausurTaskMeta.printButtonLabel)}</button>
         <button type="button" class="secondary-button" data-nav="klausurOverview">${esc(klausurTaskMeta.overviewButtonLabel)}</button>
