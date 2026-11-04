@@ -14,6 +14,12 @@ Die erste Kachel innerhalb der klausurähnlichen Aufgaben heißt „Vorbereitung
 
 Materialien, didaktisch modellierte Daten, Vorgehenshinweise und einzeln aufklappbare Musterlösungen mit Teilpunkten unterstützen die selbstständige Vorbereitung. Offene Antworten werden lokal gespeichert und anhand der Musterlösungen selbst eingeschätzt, nicht automatisch benotet. Direktlinks: `#klausur?task=fokus-hofmann`, `#klausur?task=fokus-pem`, `#klausur?task=fokus-korrosion` und `#klausur?task=fokus-korrosionsschutz`.
 
+Nach dem Abgleich mit den Q1-Unterrichtsmaterialien wurde die Grundkurs-Fassung überarbeitet: Gasnachweise im Hofmann-Block, heterogene Platin-Katalyse und Beurteilung von Energiekonzepten im PEM-Block, eine Versuchsplanungsaufgabe zur Korrosion sowie ein neu aufgebauter Korrosionsschutzblock mit Indikatorbefunden zu Eisen, Lack, Zink- und Kupferkontakt. Die bekannte formale O²⁻-Bilanzdarstellung wird in der PEM-Musterlösung ausdrücklich mit der zusammengefassten Kathodengleichung verknüpft.
+
+Wirkungsgradrechnung und Zinnüberzug sind zwei gesondert aufklappbare freiwillige Vertiefungen und zählen nicht zu den je 25 BE. Hauptaufgaben und Materialien sind durch Sprunglinks verbunden. Als unverbindliche Arbeitsorientierung werden 25–40 Minuten pro Hauptblock genannt. Geänderte Aufgaben haben neue Antwort-IDs; vorhandene Antworten werden nicht gelöscht oder einer anderen Aufgabe zugeordnet. Hinweise zu gleichwertigen Antworten und Folgefehlern ergänzen die Bewertung.
+
+Prüfbasis: Arbeitsblatt und Lösungen „Hofmann-Apparat und PEM-Brennstoffzelle“, Transferaufgaben „Wasserzersetzer und Brennstoffzelle“, Unterrichtsfolien zur Säure- und Sauerstoffkorrosion, „Korrosionsschutz_GK_Q1_Zinkelektrode“ und der Versuch „Korrosionsschutz_Korrosionsindikator“ im Projektordner sowie die entsprechenden bestehenden Lernmodule. Aufgaben, Materialbezüge, Stoff-/Ladungsbilanzen und Bewertungseinheiten wurden gegengeprüft. Browserprüfung: Navigation, Haupt-/Zusatzaufgaben, getrennte Lösungsanzeige, Antwortspeicherung, Material-Sprunglinks und mobile Darstellung.
+
 Stand der Abschlussprüfung: 04.10.2026, Revision 11. Gleichungsprüfungen erlauben freie Stoffreihenfolge innerhalb jeder Seite und proportionale Koeffizienten. Edukt- und Produktseite sowie Ladungen müssen zur gestellten Aufgabe passen. Tipps unterstützen das Vorgehen; vollständige Lösungen werden ausdrücklich als Musterlösung geöffnet. Freitext-Rückmeldungen auf Basis von Schlüsselwörtern ersetzen keine fachliche Bewertung.
 
 ## Nutzen und weitergeben

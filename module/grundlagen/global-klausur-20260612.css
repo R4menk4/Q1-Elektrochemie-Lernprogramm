@@ -1459,3 +1459,7 @@ button:disabled {
 
 /* Tabellen bleiben innerhalb der neuen Klausurmaterialien scrollbar. */
 .material-stack--exam > .material-block { min-width: 0; }
+.exam-extension { margin: 1.5rem 0; padding: 1rem; border: 1px solid #c7d8cf; border-radius: 12px; }
+.exam-extension > summary { cursor: pointer; font-weight: 700; }
+.exam-extension[open] > summary { margin-bottom: 1rem; }
+#focus-materials, #focus-tasks { scroll-margin-top: 1rem; }

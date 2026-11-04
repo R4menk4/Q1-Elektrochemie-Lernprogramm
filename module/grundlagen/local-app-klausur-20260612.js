@@ -810,7 +810,7 @@
       <h3>${esc(subtask.label)} ${subtask.operator ? `<strong>${esc(subtask.operator)}</strong> ` : ''}${esc(subtask.prompt)}</h3>
       ${control}
       ${subtask.hint ? `<details class="print-hidden"><summary>Vorgehenshinweis</summary><p>${esc(subtask.hint)}</p></details>` : ''}
-      ${subtask.checking?.type === 'selfAssessment' ? '<p class="criteria-note">Vergleichen Sie nach dem Bearbeiten Ihre Antwort mit der Musterlösung und den Teilpunkten. Es erfolgt keine automatische Bewertung.</p>' : ''}
+      ${subtask.checking?.type === 'selfAssessment' ? `<p class="criteria-note">${subtask.optional ? 'Freiwillige Vertiefung ohne BE im Hauptblock. Vergleichen Sie Ihre Antwort mit der Musterlösung.' : 'Vergleichen Sie nach dem Bearbeiten Ihre Antwort mit der Musterlösung und den Teilpunkten.'} Es erfolgt keine automatische Bewertung.</p>` : ''}
       ${isDirect ? `<button type="button" class="check-answer-button" data-check-direct="${task.id}:${subtask.id}">Antwort prüfen</button>` : ''}
       ${result ? `<p class="${result === 'Richtig.' ? 'direct-feedback direct-feedback--correct' : 'direct-feedback direct-feedback--wrong'}">${result}</p>` : ''}
       ${subtask.checking?.type === 'criteria' && subtask.criteria && subtask.criteria.length ? `<button type="button" class="check-answer-button" data-check-criteria="${task.id}:${subtask.id}">Antwort überprüfen</button><div data-criteria-for="${task.id}:${subtask.id}" data-criteria-visible="false"></div>` : ''}
@@ -830,9 +830,9 @@
       </div>
       ${pageHeader(task.title, task.context)}
       <div class="klausur-image-row">${imageHtml(task.image)}${imageHtml(task.secondaryImage)}</div>
-      ${task.focusExam ? '<p class="criteria-note">Übungsvorschlag: Bearbeiten Sie zunächst ohne Hilfen einen Block zu Wasserstoff und einen zu Korrosion (zusammen 50 BE). Die übrigen Blöcke dienen der weiteren Übung. Materialien stehen unter den Aufgaben.</p>' : `<div class="material-stack">${(task.materials || []).map(renderMaterial).join('')}</div>`}
-      <section class="subtask-stack">${(task.subtasks || []).map((subtask) => renderSubtask(task, subtask)).join('')}</section>
-      ${task.focusExam ? `<div class="material-stack material-stack--exam">${(task.materials || []).map(renderMaterial).join('')}</div><section class="material-block"><h2>Operatoren kurz erklärt</h2><p>Beschreiben: Befunde geordnet wiedergeben. Zuordnen: Begriffe passend zuweisen. Formulieren: fachlich korrekte Aussagen oder ausgeglichene Gleichungen angeben. Erklären: Ursachen und Zusammenhänge darstellen. Erläutern: Zusammenhänge mit Materialbezug verdeutlichen. Vergleichen: Gemeinsamkeiten und Unterschiede anhand gleicher Kriterien herausarbeiten. Berechnen: Ansatz und Rechenweg mit Ergebnis angeben. Beurteilen: ein fachlich begründetes Urteil formulieren. Empfehlen: eine kriteriengestützte Auswahl begründen.</p></section>` : ''}
+      ${task.focusExam ? '<p class="criteria-note">Grundkurs-Fassung · fünf Hauptaufgaben mit zusammen 25 BE. Übungsvorschlag: Bearbeiten Sie zunächst ohne Hilfen einen Block zu Wasserstoff und einen zu Korrosion (zusammen 50 BE). Als Orientierung sind etwa 25–40 Minuten je Block vorgesehen, ohne ausführlichen Lösungsvergleich. Das ist keine verbindliche Klausurdauer. Freiwillige Vertiefungen zählen nicht zu den 25 BE.</p><p><a href="#focus-materials">Zu den Materialien ↓</a></p><p class="criteria-note">Fachlich gleichwertige Antworten sind anzuerkennen. Folgefehler werden bei einem nachvollziehbaren weiteren Lösungsweg nicht mehrfach vollständig abgezogen.</p>' : `<div class="material-stack">${(task.materials || []).map(renderMaterial).join('')}</div>`}
+      <section class="subtask-stack" id="focus-tasks">${(task.subtasks || []).filter(subtask => !subtask.optional).map((subtask) => renderSubtask(task, subtask)).join('')}</section>
+      ${task.focusExam ? `<div id="focus-materials" class="material-stack material-stack--exam">${(task.materials || []).map(renderMaterial).join('')}</div><p><a href="#focus-tasks">Zurück zu den Aufgaben ↑</a></p>${task.subtasks.some(s => s.optional) ? `<details class="exam-extension"><summary>Freiwillige Vertiefung · nicht Teil der 25 BE</summary><div class="material-stack material-stack--exam">${(task.extensionMaterials || []).map(renderMaterial).join('')}</div><section class="subtask-stack">${task.subtasks.filter(s => s.optional).map(s => renderSubtask(task, s)).join('')}</section></details>` : ''}<section class="material-block"><h2>Operatoren kurz erklärt</h2><p>${focusOperators(task)}</p></section>` : ''}
       <div class="button-row print-hidden">
         <button type="button" class="primary-button" data-print-klausur="true">${esc(klausurTaskMeta.printButtonLabel)}</button>
         <button type="button" class="secondary-button" data-nav="klausurOverview">${esc(klausurTaskMeta.overviewButtonLabel)}</button>
@@ -843,6 +843,28 @@
   function findKlausurSubtask(taskId, subtaskId) {
     const task = klausurTasks.find((item) => item.id === taskId);
     return task ? task.subtasks.find((item) => item.id === subtaskId) : null;
+  }
+
+  function focusOperators(task) {
+    const definitions = {
+      Beschreiben: 'Befunde geordnet wiedergeben.',
+      Ordnen: 'Zuordnen: Begriffe passend zuweisen.',
+      Formulieren: 'Fachlich korrekte Aussagen oder ausgeglichene Gleichungen angeben.',
+      Erklären: 'Ursachen und Zusammenhänge darstellen.',
+      Erläutern: 'Zusammenhänge mit Materialbezug verdeutlichen.',
+      Vergleichen: 'Gemeinsamkeiten und Unterschiede anhand gleicher Kriterien herausarbeiten.',
+      Berechnen: 'Ansatz und Rechenweg mit Ergebnis angeben.',
+      Beurteilen: 'Ein fachlich begründetes Urteil formulieren.',
+      Entwickeln: 'Einen begründeten Vorschlag oder einen passenden Versuchsplan erarbeiten.',
+      Werten: 'Auswerten: Materialbefunde verknüpfen und fachliche Schlussfolgerungen ziehen.',
+      Empfehlen: 'Eine kriteriengestützte Auswahl begründen.'
+    };
+    const used = new Set();
+    task.subtasks.forEach(s => {
+      if (s.operator) used.add(s.operator);
+      Object.keys(definitions).forEach(op => { if (s.prompt.includes(op + ' Sie')) used.add(op); });
+    });
+    return [...used].map(op => esc(['Ordnen', 'Werten'].includes(op) ? definitions[op] : `${op}: ${definitions[op]}`)).join(' ');
   }
 
   function epNormalize(value) {
