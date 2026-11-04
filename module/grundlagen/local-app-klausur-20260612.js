@@ -497,7 +497,7 @@
   }
 
   const taskGroups=[
-    {id:'klausur-fokus',title:'Vorbereitung auf die anstehende Klausur',description:'Nur Hofmann-Apparat, Brennstoffzelle, Korrosion und Korrosionsschutz · 4 Aufgaben mit je 25 BE',image:'../../assets/klausur.png',ids:['fokus-hofmann','fokus-pem','fokus-korrosion','fokus-korrosionsschutz']},
+    {id:'klausur-fokus',title:'Vorbereitung auf die anstehende Klausur',description:'Hofmann-Apparat, Brennstoffzelle, Korrosionsschutz sowie eigene Aufgaben zu Sauerstoff- und Säurekorrosion · 6 Aufgaben mit je 25 BE',image:'../../assets/klausur.png',ids:['fokus-hofmann','fokus-pem','fokus-korrosion','fokus-korrosionsschutz','fokus-sauerstoffkorrosion','fokus-saeurekorrosion']},
     {id:'redox',title:'Redoxreaktionen und Redoxreihe',image:'../../assets/redox.png',ids:['kupferdach-patina','eisen-zink-kupfersulfat']},
     {id:'zellen',title:'Galvanische Zellen und Zellspannung',image:'../../assets/potenziale.png',ids:['groesste-zellspannung','galvanische-zelle-oder-elektrolyse']},
     {id:'elektrolyse',title:'Elektrolyse und Rohstoffe',image:'../../assets/solarlabor.png',ids:['aluminium-elektrolyse']},
