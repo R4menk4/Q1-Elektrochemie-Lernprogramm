@@ -809,7 +809,6 @@
     return `<article class="subtask-card">
       <h3>${esc(subtask.label)} ${subtask.operator ? `<strong>${esc(subtask.operator)}</strong> ` : ''}${esc(subtask.prompt)}</h3>
       ${control}
-      ${subtask.hint ? `<details class="print-hidden"><summary>Vorgehenshinweis</summary><p>${esc(subtask.hint)}</p></details>` : ''}
       ${subtask.checking?.type === 'selfAssessment' ? `<p class="criteria-note">${subtask.optional ? 'Freiwillige Vertiefung ohne BE im Hauptblock. Vergleichen Sie Ihre Antwort mit der Musterlösung.' : 'Vergleichen Sie nach dem Bearbeiten Ihre Antwort mit der Musterlösung und den Teilpunkten.'} Es erfolgt keine automatische Bewertung.</p>` : ''}
       ${isDirect ? `<button type="button" class="check-answer-button" data-check-direct="${task.id}:${subtask.id}">Antwort prüfen</button>` : ''}
       ${result ? `<p class="${result === 'Richtig.' ? 'direct-feedback direct-feedback--correct' : 'direct-feedback direct-feedback--wrong'}">${result}</p>` : ''}
